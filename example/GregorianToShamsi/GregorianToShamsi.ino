@@ -1,13 +1,3 @@
-# JalaliDateConverter
-The credit goes to https://github.com/payamsbr/DateConvLight
-this is modification of DateConvLight library.
-Light weight library to convert Gregorian date to Jalali (Shamsi) date with benefit of supporting leap years.
-also support a back way conversion which comes handy for someone who need to adjust
-devices time (for example an RTC module <DS1307>) with a Persian date that shall be internally converted.
-
-### example
-
-```cpp
 /*
  * This example Uses RTC_DS3231 and Nokia5110 LCD
  * GREGORIAN Date is fetched from RTC and converted to Jalali
@@ -55,7 +45,7 @@ void setup() {
 
   // Initialize Nokia 5110 LCD
   display.begin();
-  display.setContrast(50);
+  display.setContrast(60);
   display.clearDisplay();
 }
 
@@ -86,8 +76,12 @@ void loop() {
 
   // Print Jalali date on Serial Monitor for verification
   Serial.print("Jalali Date: ");
-  Serial.println(jalaliDate);
+  Serial.print(jalaliDate);
+  
+  Serial.print(" | Time: ");
+  Serial.print(now.hour());
+  Serial.print(":");
+  Serial.print(now.minute());
+  Serial.print(":");
+  Serial.println(now.second());
 }
-
-
-```
