@@ -85,9 +85,15 @@ void loop() {
   display.display();
   delay(1000);  // Update every second
 
-  // Print Jalali date on Serial Monitor for verification
+  // Print Jalali date & Time on Serial Monitor for verification
   Serial.print("Jalali Date: ");
-  Serial.println(jalaliDate);
+  Serial.print(jalaliDate);
+  Serial.print(" | Time: ");
+  Serial.print(now.hour());
+  Serial.print(":");
+  Serial.print(now.minute());
+  Serial.print(":");
+  Serial.println(now.second());
 }
 
 
